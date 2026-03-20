@@ -1055,6 +1055,7 @@ html, body {
             size: "Size",
             modified: "Modified",
             download: "Download",
+            downloading: "Downloading",
             rename: "Rename",
             delete_label: "Delete",
             back: "Back",
@@ -1110,6 +1111,7 @@ html, body {
             size: "Tama\u00f1o",
             modified: "Modificado",
             download: "Descargar",
+            downloading: "Descargando",
             rename: "Renombrar",
             delete_label: "Eliminar",
             back: "Volver",
@@ -1508,6 +1510,7 @@ html, body {
 
     window.detailDownload = function() {
         if (currentDetailEntry) {
+            showToast(t('downloading') + ' ' + currentDetailEntry.name, 'info');
             downloadFile(currentDetailEntry.path);
         }
     };
