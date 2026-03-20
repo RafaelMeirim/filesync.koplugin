@@ -5,9 +5,12 @@ A KOReader plugin that launches a local web server on your e-reader and displays
 Works on **Kindle** and **Kobo** devices running KOReader.
 
 <p align="center">
-  <img src="screenshots/qr-screen.png" alt="QR code screen on e-reader" width="280">
+  <img src="screenshots/qr-screen.png" alt="QR code screen on e-reader" width="500">
+</p>
+<p align="center">
+  <img src="screenshots/web-home.png" alt="QR code screen on e-reader" width="280">
   &nbsp;&nbsp;&nbsp;
-  <img src="screenshots/web-home.png" alt="Web interface - home" width="280">
+  <img src="screenshots/web-directory.png" alt="Web interface - home" width="280">
   &nbsp;&nbsp;&nbsp;
   <img src="screenshots/web-file-detail.png" alt="Web interface - file detail" width="280">
 </p>
@@ -19,7 +22,7 @@ Works on **Kindle** and **Kobo** devices running KOReader.
 - **Upload Files** — Drag-and-drop or tap to upload books from your phone
 - **Download Files** — Save any file to your phone with one tap
 - **Create Folders** — Organize your library into directories
-- **Rename & Delete** — Full file management with confirmation dialogs
+- **Rename & Delete** — Limited file management with confirmation dialogs
 - **Search & Sort** — Filter by name, sort by name/size/date/type
 - **Responsive UI** — Designed for smartphones, works on any screen
 
@@ -38,7 +41,14 @@ Works on **Kindle** and **Kobo** devices running KOReader.
 - A Kindle or Kobo e-reader with [KOReader](https://github.com/koreader/koreader) installed
 - Both your e-reader and phone on the same WiFi network
 
-### Option 1: Direct Copy (Recommended)
+### Option 1: From Release Archive (Recommended)
+
+1. Download the latest release `.zip` from the [Releases](../../releases) page
+2. Extract the archive
+3. Copy the `filesync.koplugin` folder to your device's KOReader plugins directory (see paths above)
+4. Restart KOReader
+
+### Option 2: Direct Copy
 
 1. Connect your e-reader to your computer via USB
 
@@ -68,13 +78,6 @@ Works on **Kindle** and **Kobo** devices running KOReader.
    ```
 
 4. Safely eject and restart KOReader
-
-### Option 2: From Release Archive
-
-1. Download the latest release `.zip` from the [Releases](../../releases) page
-2. Extract the archive
-3. Copy the `filesync.koplugin` folder to your device's KOReader plugins directory (see paths above)
-4. Restart KOReader
 
 ### Verifying Installation
 
