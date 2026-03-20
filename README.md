@@ -38,10 +38,10 @@ Works on **Kindle** and **Kobo** devices running KOReader.
    - **Kindle:** `/mnt/us/koreader/plugins/`
    - **Kobo:** `.adds/koreader/plugins/` (on the root of the SD card)
 
-3. Copy the entire `FileSync.koplugin` folder into the plugins directory:
+3. Copy the entire `filesync.koplugin` folder into the plugins directory:
    ```
    plugins/
-   ├── FileSync.koplugin/
+   ├── filesync.koplugin/
    │   ├── _meta.lua
    │   ├── main.lua
    │   └── filesync/
@@ -65,7 +65,7 @@ Works on **Kindle** and **Kobo** devices running KOReader.
 
 1. Download the latest release `.zip` from the [Releases](../../releases) page
 2. Extract the archive
-3. Copy the `FileSync.koplugin` folder to your device's KOReader plugins directory (see paths above)
+3. Copy the `filesync.koplugin` folder to your device's KOReader plugins directory (see paths above)
 4. Restart KOReader
 
 ### Verifying Installation
@@ -121,7 +121,7 @@ If you see the menu entry, the plugin is installed correctly.
 ## Troubleshooting
 
 **Plugin doesn't appear in the menu**
-- Ensure the folder is named exactly `FileSync.koplugin` (case-sensitive)
+- Ensure the folder is named exactly `filesync.koplugin` (case-sensitive)
 - Check that `_meta.lua` and `main.lua` are directly inside the folder (not nested)
 - Restart KOReader completely
 
