@@ -3,6 +3,7 @@ local CenterContainer = require("ui/widget/container/centercontainer")
 local ConfirmBox = require("ui/widget/confirmbox")
 local Device = require("device")
 local FrameContainer = require("ui/widget/container/framecontainer")
+local Geom = require("ui/geometry")
 local GestureRange = require("ui/gesturerange")
 local InfoMessage = require("ui/widget/infomessage")
 local InputContainer = require("ui/widget/container/inputcontainer")
@@ -284,11 +285,17 @@ function FileSyncManager:allowStandby()
 end
 
 function FileSyncManager:checkBatteryAndStart()
-    local power_device = Device:getPowerDevice()
-    local capacity = power_device:getCapacity()
-    local is_plugged = Device:isPluggedIn()
+    local ok_power, power_device = pcall(function() return Device:getPowerDevice() end)
+    local capacity = 100
+    local is_charging = false
+    if ok_power and power_device then
+        local ok_cap, cap = pcall(function() return power_device:getCapacity() end)
+        if ok_cap and cap then capacity = cap end
+        local ok_chg, chg = pcall(function() return power_device:isCharging() end)
+        if ok_chg then is_charging = chg end
+    end
 
-    if capacity < 15 and not is_plugged then
+    if capacity < 15 and not is_charging then
         UIManager:show(ConfirmBox:new{
             title = _("Low Battery"),
             text = T(_("Battery level is at %1%. Running the server may drain the battery quickly."), capacity),
@@ -457,7 +464,7 @@ function FileSyncManager:showQRCode()
         Tap = {
             GestureRange:new{
                 ges = "tap",
-                range = { x = 0, y = 0, w = screen_width, h = screen_height },
+                range = Geom:new{ x = 0, y = 0, w = screen_width, h = screen_height },
             },
         },
     }
